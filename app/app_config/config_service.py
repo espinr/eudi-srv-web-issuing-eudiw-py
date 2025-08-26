@@ -267,13 +267,13 @@ class ConfService:
     }
 
     config_doctype = {
-        "net.openathletics.sportslicence.1": {
+        "net.openathletics.licence.1": {
             "issuing_authority": "Test QEAA issuer",
             "organization_id": pid_organization_id,
             "validity": qeaa_validity,
             "organization_name": "Test QEAA issuer",
-            "namespace": "net.openathletics.sportslicence.1",
-        },
+            "namespace": "net.openathletics.licence.1",
+        },        
         "eu.europa.ec.eudi.pid.1": {
             "issuing_authority": pid_issuing_authority,
             "organization_id": pid_organization_id,
@@ -409,7 +409,7 @@ class ConfService:
             "eu.europa.ec.eudi.msisdn_mdoc",
         ],
         "country_selection": [
-            "net.openathletics.sportslicence_mdoc",
+            "net.openathletics.licence_mdoc",
             "eu.europa.ec.eudi.loyalty_mdoc",
             "eu.europa.ec.eudi.mdl_mdoc",
             "eu.europa.ec.eudi.pid_vc_sd_jwt",

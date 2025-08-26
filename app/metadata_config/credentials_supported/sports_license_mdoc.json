@@ -1,258 +1,106 @@
 {
-  "net.openathletics.sportslicence_mdoc":{
-     "format":"mso_mdoc",
-     "doctype":"net.openathletics.sportslicence.1",
-     "scope":"net.openathletics.sportslicence_mdoc",
-     "cryptographic_binding_methods_supported":[
-        "jwk",
-        "cose_key"
-     ],
-     "credential_signing_alg_values_supported":[
+  "net.openathletics.licence_mdoc": {
+      "format": "mso_mdoc",
+      "doctype": "net.openathletics.licence.1",
+      "scope": "net.openathletics.licence_mdoc",
+      "cryptographic_binding_methods_supported": [
+        "jwk", "cose_key"
+      ],
+      "credential_signing_alg_values_supported": [
         "ES256"
-     ],
-     "proof_types_supported":{
-        "jwt":{
-           "proof_signing_alg_values_supported":[
-              "ES256"
-           ]
+      ],
+      "proof_types_supported": {
+        "jwt": {
+          "proof_signing_alg_values_supported": [
+            "ES256"
+          ]
         }
-     },
-     "display":[
+      },
+      "display": [
         {
-           "name":"Sports License",
-           "locale":"en",
-           "logo":{
-              "uri":"https://openathletics.net/assets/images/88x88.png",
-              "alt_text":"A square logo with a track"
-           }
+          "name": "Sports License",
+          "locale": "en",
+          "logo": {
+            "uri": "https://openathletics.net/assets/images/88x88.png",
+            "alt_text": "A square figure of a track"
+          }
         }
-     ],
-     "claims":[
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "family_name"
-           ],
-           "mandatory":true,
-           "value_type":"string",
-           "source":"user",
-           "display":[
+      ],
+      "claims": [
+          {
+            "path":["net.openathletics.licence.1","given_name"],
+            "mandatory": true,
+            "value_type":"string",
+            "source":"user",
+            "display": [
               {
-                 "name":"Family name",
-                 "locale":"en"
+                "name": "Given Name",
+                "locale": "en"
               }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "given_name"
-           ],
-           "mandatory":true,
-           "value_type":"string",
-           "source":"user",
-           "display":[
+            ]
+          },
+          {
+            "path":["net.openathletics.licence.1","family_name"],
+            "mandatory": true,
+            "value_type":"string",
+            "source":"user",
+            "display": [
               {
-                 "name":"Given name",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "birth_date"
-           ],
-           "mandatory":true,
-           "value_type":"full-date",
-           "source":"user",
-           "display":[
+                "name": "Family Name",
+                "locale": "en"              }
+            ]
+          },
+          {
+            "path":["net.openathletics.licence.1","club_name"],
+            "mandatory": true,
+            "value_type":"string",
+            "source":"user",
+            "display": [
               {
-                 "name":"Date of birth",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "issue_date"
-           ],
-           "mandatory":true,
-           "source":"issuer",
-           "display":[
+                "name": "Club or Team",
+                "locale": "en"              }
+            ]
+          },
+          {
+            "path":["net.openathletics.licence.1","document_number"],
+            "mandatory": true,
+            "value_type":"string",
+            "source":"user",
+            "display": [
               {
-                 "name":"Date of issue",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "expiry_date"
-           ],
-           "mandatory":true,
-           "source":"issuer",
-           "display":[
+                "name": "License Number",
+                "locale": "en"              }
+            ]
+          },
+          {
+            "path":["net.openathletics.licence.1","issuance_date"],
+            "mandatory": true,
+            "source":"issuer",
+            "display": [
               {
-                 "name":"Expiry Date",
-                 "locale":"en"
+                "name": "Issuance Date",
+                "locale": "en"
               }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "issuing_authority"
-           ],
-           "mandatory":true,
-           "source":"issuer",
-           "display":[
+            ]
+          },
+          {
+            "path":["net.openathletics.licence.1","expiry_date"],
+            "mandatory": true,
+            "source":"issuer",
+            "display": [
               {
-                 "name":"Issuing authority",
-                 "locale":"en"
+                "name": "Expiry Date",
+                "locale": "en"
               }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "club"
-           ],
-           "mandatory":false,
-           "source":"issuer",
-           "display":[
-              {
-                 "name":"Club or Team",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "document_number"
-           ],
-           "mandatory":true,
-           "value_type":"string",
-           "source":"user",
-           "display":[
-              {
-                 "name":"Licence number",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "portrait"
-           ],
-           "mandatory":true,
-           "value_type":"jpeg",
-           "source":"user",
-           "display":[
-              {
-                 "name":"Portrait",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "sex"
-           ],
-           "mandatory":false,
-           "source":"user",
-           "value_type":"uint",
-           "display":[
-              {
-                 "name":"Sex",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "age_in_years"
-           ],
-           "mandatory":false,
-           "value_type":"uint",
-           "source":"user",
-           "display":[
-              {
-                 "name":"Age in Years",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "age_birth_year"
-           ],
-           "mandatory":false,
-           "value_type":"uint",
-           "source":"user",
-           "display":[
-              {
-                 "name":"Birth Year",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "category"
-           ],
-           "mandatory":false,
-           "source":"issuer",
-           "display":[
-              {
-                 "name":"Competition category",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.11",
-              "issuing_jurisdiction"
-           ],
-           "mandatory":false,
-           "display":[
-              {
-                 "name":"Issuing jurisdiction",
-                 "locale":"en"
-              }
-           ]
-        },
-        {
-           "path":[
-              "net.openathletics.sportslicence.1",
-              "nationality"
-           ],
-           "mandatory":false,
-           "value_type":"string",
-           "source":"user",
-           "display":[
-              {
-                 "name":"Nationality",
-                 "locale":"en"
-              }
-           ]
+            ]
+          }
+      ],
+      "issuer_config":{
+            "issuing_authority":"Test PID issuer",
+            "organization_id":"EUDI Wallet Reference Implementation",
+            "validity":90,
+            "organization_name":"Test PID issuer",
+            "namespace": "net.openathletics.licence.1"
         }
-     ],
-     "issuer_config":{
-        "issuing_authority":"Test EAA issuer",
-        "organization_id":"EUDI Wallet Reference Implementation",
-        "validity":90,
-        "organization_name":"Test PID issuer",
-        "namespace":"net.openathletics.sportslicence.1"
-     }
+    }
   }
-}
