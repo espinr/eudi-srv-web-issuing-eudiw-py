@@ -64,6 +64,7 @@ class ConfCountries:
             # "pid_mdoc_cert": cfgserv.trusted_CAs_path + "hackathon-DS-0002_UT_cert.der",
             "un_distinguishing_sign": "FC",
             "supported_credentials": [
+                "net.openathletics.sportslicence_mdoc",
                 "eu.europa.ec.eudi.pid_mdoc",
                 "eu.europa.ec.eudi.pid_vc_sd_jwt",
                 "eu.europa.ec.eudi.mdl_mdoc",
