@@ -39,7 +39,7 @@ class ConfCountries:
             "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0002_EU.pem",
             # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_EU.pem',
             "pid_mdoc_privkey_passwd": None,  # None or bytes,
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0002_EU_cert.der",
+            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0002.cert.der",
             "loa": "http://eidas.europa.eu/LoA/high",
             "supported_credentials": [
                 "eu.europa.ec.eudi.pid_mdoc",
@@ -60,7 +60,7 @@ class ConfCountries:
             # "pid_mdoc_privkey": cfgserv.privKey_path + "hackathon-DS-0002_UT.pem",
             # "pid_mdoc_privkey": 'app\certs\PID-DS-0002_UT.pem',
             "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0002_UT_cert.der",
+            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0002.cert.der",
             # "pid_mdoc_cert": cfgserv.trusted_CAs_path + "hackathon-DS-0002_UT_cert.der",
             "un_distinguishing_sign": "FC",
             "supported_credentials": [
