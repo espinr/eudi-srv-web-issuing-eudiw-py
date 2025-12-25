@@ -334,9 +334,23 @@ def create_app(test_config=None):
 
     app.config.from_mapping(SECRET_KEY="dev")
 
+#    @app.route("/", methods=["GET"])
+#    def health_check():
+#        return "OK", 200
+
     @app.route("/", methods=["GET"])
-    def health_check():
-        return "OK", 200
+    def initial_page():
+        return render_template(
+            "misc/initial_page.html", oidc=cfgserv.oidc, service_url=cfgserv.service_url
+        )
+
+    @app.route("/favicon.ico")
+    def favicon():
+        return send_from_directory("static/images", "favicon.ico")
+
+    @app.route("/ic-logo.png")
+    def logo():
+        return send_from_directory("static/images", "ic-logo.png")
 
     if test_config is None:
         # load the instance config (in instance directory), if it exists, when not testing
