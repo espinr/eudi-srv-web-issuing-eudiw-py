@@ -334,15 +334,15 @@ def create_app(test_config=None):
 
     app.config.from_mapping(SECRET_KEY="dev")
 
-#    @app.route("/", methods=["GET"])
-#    def health_check():
-#        return "OK", 200
-
     @app.route("/", methods=["GET"])
-    def initial_page():
-        return render_template(
-            "misc/initial_page.html", oidc=cfgserv.oidc, service_url=cfgserv.service_url
-        )
+    def health_check():
+        return "OK", 200
+
+#    @app.route("/", methods=["GET"])
+#    def initial_page():
+#        return render_template(
+#            "misc/initial_page.html", oidc=cfgserv.oidc, service_url=cfgserv.service_url
+#        )
 
     @app.route("/favicon.ico")
     def favicon():
