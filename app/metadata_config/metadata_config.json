@@ -1,7 +1,7 @@
 {
    "credential_issuer":"https://backend.issuer.pbest.me",
    "authorization_servers":[
-      "https://backend.issuer.pbest.me/oidc"
+      "https://oidc.issuer.pbest.me"
    ],
    "credential_endpoint":"https://backend.issuer.pbest.me/credential",
    "nonce_endpoint":"https://backend.issuer.pbest.me/nonce",
@@ -55,7 +55,7 @@
          "name":"Utopian Athletics",
          "locale":"en",
          "logo":{
-            "uri":"https://backend.issuer.pbest.me/ic-logo.png",
+            "uri":"https://issuer.pbest.me/ic-logo.png",
             "alt_text":"Utopian Athletics"
          }
       }

@@ -1,0 +1,141 @@
+{
+  "net.openathletics.fan_mdoc": {
+    "format": "mso_mdoc",
+    "doctype": "net.openathletics.fan.1",
+    "scope": "net.openathletics.fan_mdoc",
+    "cryptographic_binding_methods_supported": [
+      "jwk",
+      "cose_key"
+    ],
+    "credential_signing_alg_values_supported": [
+      "ES256"
+    ],
+    "proof_types_supported": {
+      "jwt": {
+        "proof_signing_alg_values_supported": [
+          "ES256"
+        ]
+      }
+    },
+    "display": [
+      {
+        "name": "Fan Loyalty",
+        "locale": "en",
+        "logo": {
+          "uri": "https://openathletics.net/assets/images/88x88.png",
+          "alt_text": "A squared figure of a track"
+        }
+      }
+    ],
+    "claims": [
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "given_name"
+        ],
+        "mandatory": true,
+        "value_type": "string",
+        "source": "user",
+        "display": [
+          {
+            "name": "Given Name",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "family_name"
+        ],
+        "mandatory": true,
+        "value_type": "string",
+        "source": "user",
+        "display": [
+          {
+            "name": "Family Name",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "nationality"
+        ],
+        "mandatory": true,
+        "source": "user",
+        "value_type": "nationalities",
+        "display": [
+          {
+            "name": "Nationality",
+            "locale": "en"
+          }
+        ],
+        "issuer_conditions": {
+          "cardinality": {
+            "min": 0,
+            "max": "n"
+          },
+          "nationalities": {
+            "country_code": {
+              "mandatory": true,
+              "value_type": "string",
+              "source": "user"
+            }
+          }
+        }
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "fan_id"
+        ],
+        "mandatory": true,
+        "value_type": "string",
+        "source": "user",
+        "display": [
+          {
+            "name": "Fan ID",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "issuance_date"
+        ],
+        "mandatory": true,
+        "source": "issuer",
+        "display": [
+          {
+            "name": "Issuance Date",
+            "locale": "en"
+          }
+        ]
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "expiry_date"
+        ],
+        "mandatory": true,
+        "source": "issuer",
+        "display": [
+          {
+            "name": "Expiry Date",
+            "locale": "en"
+          }
+        ]
+      }
+    ],
+    "issuer_config": {
+      "issuing_authority": "Utopian Federation",
+      "organization_id": "net.openathletics.utopianfederation",
+      "validity": 90,
+      "organization_name": "Utopian Athletics Federation",
+      "namespace": "net.openathletics.fan.1"
+    }
+  }
+}

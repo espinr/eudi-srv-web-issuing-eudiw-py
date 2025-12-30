@@ -1,0 +1,126 @@
+{
+   "net.openathletics.health_mdoc":{
+      "format":"mso_mdoc",
+      "doctype":"net.openathletics.health.1",
+      "scope":"net.openathletics.health_mdoc",
+      "cryptographic_binding_methods_supported":[
+         "jwk",
+         "cose_key"
+      ],
+      "credential_signing_alg_values_supported":[
+         "ES256"
+      ],
+      "proof_types_supported":{
+         "jwt":{
+            "proof_signing_alg_values_supported":[
+               "ES256"
+            ]
+         }
+      },
+      "display":[
+         {
+            "name":"Health Self-Declaration",
+            "locale":"en",
+            "logo": {
+               "uri": "https://openathletics.net/assets/images/88x88.png",
+               "alt_text": "A squared figure of a track"
+            }
+         }
+      ],
+      "claims":[
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "user_pseudonym"
+            ],
+            "mandatory":true,
+            "value_type":"string",
+            "source":"issuer",
+            "display":[
+               {
+                  "name":"User pseudonym",
+                  "locale":"en"
+               }
+            ]
+         },
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "health_declaration"
+            ],
+            "mandatory":true,
+            "value_type":"bool",
+            "source":"user",
+            "display":[
+               {
+                  "name":"Healthy condition",
+                  "locale":"en"
+               }
+            ]
+         },
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "issuance_date"
+            ],
+            "mandatory":true,
+            "source":"issuer",
+            "display":[
+               {
+                  "name":"Issuance Date",
+                  "locale":"en"
+               }
+            ]
+         },
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "expiry_date"
+            ],
+            "mandatory":true,
+            "source":"issuer",
+            "display":[
+               {
+                  "name":"Expiry Date",
+                  "locale":"en"
+               }
+            ]
+         },
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "issuing_country"
+            ],
+            "mandatory":true,
+            "source":"issuer",
+            "display":[
+               {
+                  "name":"Issuing Country",
+                  "locale":"en"
+               }
+            ]
+         },
+         {
+            "path":[
+               "net.openathletics.health.1",
+               "issuing_authority"
+            ],
+            "mandatory":true,
+            "source":"issuer",
+            "display":[
+               {
+                  "name":"Issuing Authority",
+                  "locale":"en"
+               }
+            ]
+         }
+      ],
+      "issuer_config": {
+         "issuing_authority": "Utopian Federation",
+         "organization_id": "net.openathletics.utopianfederation",
+         "validity": 90,
+         "organization_name": "Utopian Athletics Federation",
+         "namespace": "net.openathletics.licence.1"
+      }
+   }
+}

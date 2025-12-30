@@ -39,17 +39,17 @@ class ConfService:
     wallet_test_url = os.getenv("WALLET_TEST_URL", "https://tester.issuer.eudiw.dev/")
 
     revocation_service_url = os.getenv(
-        "REVOCATION_SERVICE_URL", "https://issuer.eudiw.dev/token_status_list/take"
+        "REVOCATION_SERVICE_URL", "https://status.eudiw.dev/token_status_list/take"
     )
 
     revocation_api_key = os.getenv("REVOCATION_API_KEY", "test")
 
     revoke_service_url = os.getenv(
-        "REVOKE_SERVICE_URL", "https://issuer.eudiw.dev/token_status_list/set"
+        "REVOKE_SERVICE_URL", "https://status.eudiw.dev/token_status_list/set"
     )
 
     default_frontend = os.getenv(
-        "DEFAULT_FRONTEND", "5d725b3c-6d42-448e-8bfd-1eff1fcf152d"
+        "DEFAULT_FRONTEND", "5d725b3c-6d42-448e-8bfd-1eff1fcf1529"
     )
 
     oid4vp_scheme = os.getenv(
@@ -140,6 +140,9 @@ class ConfService:
             "eu.europa.ec.eudi.hiid_mdoc",
             "eu.europa.ec.eudi.tax_mdoc",
             "eu.europa.ec.eudi.msisdn_mdoc",
+            "net.openathletics.health.1",
+            "net.openathletics.fan.1",
+            "net.openathletics.licence.1"            
         ],
         "country_selection": [
             "eu.europa.ec.eudi.loyalty_mdoc",
@@ -172,7 +175,10 @@ class ConfService:
             "eu.europa.ec.eudi.employee_mdoc",
             "eu.europa.ec.eudi.pid_mdoc_deferred",
             "eu.europa.ec.eudi.age_verification_mdoc",
-            "eu.europa.ec.eudi.age_verification_mdoc_passport"
+            "eu.europa.ec.eudi.age_verification_mdoc_passport",
+            "net.openathletics.health.1",
+            "net.openathletics.fan.1",
+            "net.openathletics.licence.1"
         ],
     }
 
