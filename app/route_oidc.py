@@ -98,7 +98,7 @@ def well_known2():
 
 @oidc.route("/.well-known/oauth-authorization-server/frontend")
 def well_known3():
-    url = "https://dev.issuer.eudiw.dev/frontend/.well-known/oauth-authorization-server"
+    url = "https://issuer.pbest.me/.well-known/oauth-authorization-server"
     r = requests.get(url)
 
     return Response(

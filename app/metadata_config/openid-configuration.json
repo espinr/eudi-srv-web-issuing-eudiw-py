@@ -13,7 +13,7 @@
       "urn:ietf:params:oauth:grant-type:jwt-bearer",
       "refresh_token"
    ],
-   "jwks_uri":"https://dev.issuer.eudiw.dev/oidc/static/jwks.json",
+   "jwks_uri":"https://oidc.issuer.pbest.me/static/jwks.json",
    "scopes_supported":[
       "openid"
    ],
@@ -92,12 +92,12 @@
    "code_challenge_methods_supported":[
       "S256"
    ],
-   "issuer":"https://dev.issuer.eudiw.dev/oidc",
-   "registration_endpoint":"https://dev.issuer.eudiw.dev/oidc/registration",
-   "introspection_endpoint":"https://dev.issuer.eudiw.dev/oidc/introspection",
-   "authorization_endpoint":"https://dev.issuer.eudiw.dev/oidc/authorization",
-   "token_endpoint":"https://dev.issuer.eudiw.dev/oidc/token",
-   "userinfo_endpoint":"https://dev.issuer.eudiw.dev/oidc/userinfo",
-   "end_session_endpoint":"https://dev.issuer.eudiw.dev/oidc/session",
-   "pushed_authorization_request_endpoint":"https://dev.issuer.eudiw.dev/oidc/pushed_authorization"
+   "issuer":"https://oidc.issuer.pbest.me",
+   "registration_endpoint":"https://oidc.issuer.pbest.me/registration",
+   "introspection_endpoint":"https://oidc.issuer.pbest.me/introspection",
+   "authorization_endpoint":"https://oidc.issuer.pbest.me/authorization",
+   "token_endpoint":"https://oidc.issuer.pbest.me/token",
+   "userinfo_endpoint":"https://oidc.issuer.pbest.me/userinfo",
+   "end_session_endpoint":"https://oidc.issuer.pbest.me/session",
+   "pushed_authorization_request_endpoint":"https://oidc.issuer.pbest.me/pushed_authorization"
 }

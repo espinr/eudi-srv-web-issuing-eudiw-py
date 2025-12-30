@@ -1,12 +1,12 @@
 {
-   "credential_issuer":"https://dev.issuer.eudiw.dev",
+   "credential_issuer":"https://backend.issuer.pbest.me",
    "authorization_servers":[
-      "https://dev.issuer.eudiw.dev/oidc"
+      "https://backend.issuer.pbest.me/oidc"
    ],
-   "credential_endpoint":"https://dev.issuer.eudiw.dev/credential",
-   "nonce_endpoint":"https://dev.issuer.eudiw.dev/nonce",
-   "deferred_credential_endpoint":"https://dev.issuer.eudiw.dev/deferred_credential",
-   "notification_endpoint":"https://dev.issuer.eudiw.dev/notification",
+   "credential_endpoint":"https://backend.issuer.pbest.me/credential",
+   "nonce_endpoint":"https://backend.issuer.pbest.me/nonce",
+   "deferred_credential_endpoint":"https://backend.issuer.pbest.me/deferred_credential",
+   "notification_endpoint":"https://backend.issuer.pbest.me/notification",
    "batch_credential_issuance":{
       "batch_size":100
    },
@@ -52,11 +52,11 @@
    },
    "display":[
       {
-         "name":"Digital Credentials Issuer",
+         "name":"Utopian Athletics",
          "locale":"en",
          "logo":{
-            "uri":"https://dev.issuer.eudiw.dev/ic-logo.png",
-            "alt_text":"EU Digital Identity Wallet Logo"
+            "uri":"https://backend.issuer.pbest.me/ic-logo.png",
+            "alt_text":"Utopian Athletics"
          }
       }
    ],
