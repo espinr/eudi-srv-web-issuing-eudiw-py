@@ -140,9 +140,9 @@ class ConfService:
             "eu.europa.ec.eudi.hiid_mdoc",
             "eu.europa.ec.eudi.tax_mdoc",
             "eu.europa.ec.eudi.msisdn_mdoc",
-            "net.openathletics.health.1",
-            "net.openathletics.fan.1",
-            "net.openathletics.licence.1"            
+            "net.openathletics.health_mdoc",
+            "net.openathletics.fan_mdoc",
+            "net.openathletics.licence_mdoc"            
         ],
         "country_selection": [
             "eu.europa.ec.eudi.loyalty_mdoc",
@@ -176,9 +176,9 @@ class ConfService:
             "eu.europa.ec.eudi.pid_mdoc_deferred",
             "eu.europa.ec.eudi.age_verification_mdoc",
             "eu.europa.ec.eudi.age_verification_mdoc_passport",
-            "net.openathletics.health.1",
-            "net.openathletics.fan.1",
-            "net.openathletics.licence.1"
+            "net.openathletics.health_mdoc",
+            "net.openathletics.fan_mdoc",
+            "net.openathletics.licence_mdoc"
         ],
     }
 
