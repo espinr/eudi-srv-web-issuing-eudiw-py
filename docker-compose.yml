@@ -1,12 +1,16 @@
+version: "3.3"
+
 services:
-  issuer_backend:
-    image: ghcr.io/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py:latest
+  eudiw-issuer:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
-      - /etc/eudiw/pid-issuer-dev/cert/:/etc/eudiw/pid-issuer-dev/cert/:ro
-      - /etc/eudiw/pid-issuer-dev/privKey/:/etc/eudiw/pid-issuer-dev/privKey/:ro
-      - /tmp/log_dev:/tmp/log_dev
+      - ../secrets-pid-issuer/cert/:/etc/eudiw/pid-issuer-dev/cert/:ro
+      - ../secrets-pid-issuer/privKey/:/etc/eudiw/pid-issuer-dev/privKey/:ro
+      - ../logs/backend:/tmp/log_dev
     env_file:
       - app/.env
     extra_hosts:
