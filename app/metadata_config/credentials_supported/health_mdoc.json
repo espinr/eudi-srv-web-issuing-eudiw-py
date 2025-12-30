@@ -121,7 +121,7 @@
          "organization_id": "net.openathletics.utopianfederation",
          "validity": 90,
          "organization_name": "Utopian Athletics Federation",
-         "namespace": "net.openathletics.licence.1"
+         "namespace": "net.openathletics.health.1"
          }
      }
    }

@@ -308,7 +308,7 @@
         {
           "path": [
             "net.openathletics.license.1",
-            "eu_scope_licence"
+            "eu_scope_license"
           ],
           "mandatory": false,
           "source": "user",
