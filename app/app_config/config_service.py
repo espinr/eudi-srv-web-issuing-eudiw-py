@@ -142,7 +142,7 @@ class ConfService:
             "eu.europa.ec.eudi.msisdn_mdoc",
             "net.openathletics.health_mdoc",
             "net.openathletics.fan_mdoc",
-            "net.openathletics.licence_mdoc"            
+            "net.openathletics.license_mdoc"            
         ],
         "country_selection": [
             "eu.europa.ec.eudi.loyalty_mdoc",
@@ -178,7 +178,7 @@ class ConfService:
             "eu.europa.ec.eudi.age_verification_mdoc_passport",
             "net.openathletics.health_mdoc",
             "net.openathletics.fan_mdoc",
-            "net.openathletics.licence_mdoc"
+            "net.openathletics.license_mdoc"
         ],
     }
 

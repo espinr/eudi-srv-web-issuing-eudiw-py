@@ -1,8 +1,8 @@
 {
-  "net.openathletics.licence_mdoc": {
+  "net.openathletics.license_mdoc": {
     "format": "mso_mdoc",
-    "doctype": "net.openathletics.licence.1",
-    "scope": "net.openathletics.licence_mdoc",
+    "doctype": "net.openathletics.license.1",
+    "scope": "net.openathletics.license_mdoc",
     "cryptographic_binding_methods_supported": [
       "jwk", "cose_key"
     ],
@@ -30,7 +30,7 @@
       "claims": [
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "given_name"
           ],
           "mandatory": true,
@@ -45,7 +45,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "family_name"
           ],
           "mandatory": true,
@@ -60,7 +60,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "birth_date"
           ],
           "mandatory": true,
@@ -75,7 +75,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "nationality"
           ],
           "mandatory": true,
@@ -103,7 +103,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "contact_information"
           ],
           "mandatory": true,
@@ -156,7 +156,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "gender"
           ],
           "mandatory": true,
@@ -171,7 +171,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "age_birth_year"
           ],
           "mandatory": true,
@@ -185,7 +185,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "age_in_years"
           ],
           "mandatory": true,
@@ -200,7 +200,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "category"
           ],
           "mandatory": false,
@@ -249,7 +249,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "club_name"
           ],
           "mandatory": true,
@@ -264,7 +264,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "document_number"
           ],
           "mandatory": true,
@@ -279,7 +279,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "issuance_date"
           ],
           "mandatory": true,
@@ -293,7 +293,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "expiry_date"
           ],
           "mandatory": true,
@@ -307,7 +307,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "eu_scope_licence"
           ],
           "mandatory": false,
@@ -322,7 +322,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "aui_banned"
           ],
           "mandatory": false,
@@ -337,7 +337,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "qualified_competitor_nationals_2026"
           ],
           "mandatory": false,
@@ -352,7 +352,7 @@
         },
         {
           "path": [
-            "net.openathletics.licence.1",
+            "net.openathletics.license.1",
             "portrait"
           ],
           "mandatory": false,
@@ -372,7 +372,7 @@
       "organization_id": "net.openathletics.utopianfederation",
       "validity": 90,
       "organization_name": "Utopian Athletics Federation",
-      "namespace": "net.openathletics.licence.1"
+      "namespace": "net.openathletics.license.1"
     }
   }
 }
