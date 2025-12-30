@@ -3,20 +3,21 @@
     "format": "mso_mdoc",
     "doctype": "net.openathletics.fan.1",
     "scope": "net.openathletics.fan_mdoc",
-    "cryptographic_binding_methods_supported": [
+    "cryptographic_binding_methods_supported":[
       "jwk",
       "cose_key"
-    ],
-    "credential_signing_alg_values_supported": [
-      "ES256"
-    ],
-    "proof_types_supported": {
-      "jwt": {
-        "proof_signing_alg_values_supported": [
-          "ES256"
-        ]
+   ],
+   "credential_signing_alg_values_supported":[
+      -7
+   ],
+   "proof_types_supported":{
+      "jwt":{
+         "proof_signing_alg_values_supported":[
+            "ES256"
+         ]
       }
-    },
+   },
+   "credential_metadata": {
     "display": [
       {
         "name": "Fan Loyalty",
@@ -129,7 +130,8 @@
           }
         ]
       }
-    ],
+    ]
+  },
     "issuer_config": {
       "issuing_authority": "Utopian Federation",
       "organization_id": "net.openathletics.utopianfederation",

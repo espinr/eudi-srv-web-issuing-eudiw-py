@@ -4,11 +4,10 @@
     "doctype": "net.openathletics.licence.1",
     "scope": "net.openathletics.licence_mdoc",
     "cryptographic_binding_methods_supported": [
-      "jwk",
-      "cose_key"
+      "jwk", "cose_key"
     ],
     "credential_signing_alg_values_supported": [
-      "ES256"
+      -7
     ],
     "proof_types_supported": {
       "jwt": {
@@ -17,321 +16,323 @@
         ]
       }
     },
-    "display": [
-      {
-        "name": "Athlete License",
-        "locale": "en",
-        "logo": {
-          "uri": "https://openathletics.net/assets/images/88x88.png",
-          "alt_text": "A squared figure of a track"
+    "credential_metadata": {
+      "display": [
+        {
+          "name": "Athlete License",
+          "locale": "en",
+          "logo": {
+            "uri": "https://openathletics.net/assets/images/88x88.png",
+            "alt_text": "A squared figure of a track"
+          }
         }
-      }
-    ],
-    "claims": [
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "given_name"
-        ],
-        "mandatory": true,
-        "value_type": "string",
-        "source": "user",
-        "display": [
-          {
-            "name": "Given Name",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "family_name"
-        ],
-        "mandatory": true,
-        "value_type": "string",
-        "source": "user",
-        "display": [
-          {
-            "name": "Family Name",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "birth_date"
-        ],
-        "mandatory": true,
-        "value_type": "full-date",
-        "source": "user",
-        "display": [
-          {
-            "name": "Date of Birth",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "nationality"
-        ],
-        "mandatory": true,
-        "source": "user",
-        "value_type": "nationalities",
-        "display": [
-          {
-            "name": "Nationality",
-            "locale": "en"
-          }
-        ],
-        "issuer_conditions": {
-          "cardinality": {
-            "min": 0,
-            "max": "n"
-          },
-          "nationalities": {
-            "country_code": {
-              "mandatory": true,
-              "value_type": "string",
-              "source": "user"
+      ],
+      "claims": [
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "given_name"
+          ],
+          "mandatory": true,
+          "value_type": "string",
+          "source": "user",
+          "display": [
+            {
+              "name": "Given Name",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "family_name"
+          ],
+          "mandatory": true,
+          "value_type": "string",
+          "source": "user",
+          "display": [
+            {
+              "name": "Family Name",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "birth_date"
+          ],
+          "mandatory": true,
+          "value_type": "full-date",
+          "source": "user",
+          "display": [
+            {
+              "name": "Date of Birth",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "nationality"
+          ],
+          "mandatory": true,
+          "source": "user",
+          "value_type": "nationalities",
+          "display": [
+            {
+              "name": "Nationality",
+              "locale": "en"
+            }
+          ],
+          "issuer_conditions": {
+            "cardinality": {
+              "min": 0,
+              "max": "n"
+            },
+            "nationalities": {
+              "country_code": {
+                "mandatory": true,
+                "value_type": "string",
+                "source": "user"
+              }
             }
           }
-        }
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "contact_information"
-        ],
-        "mandatory": true,
-        "value_type": "contact_information_attributes",
-        "source": "user",
-        "display": [
-          {
-            "name": "Contact Information",
-            "locale": "en"
-          }
-        ],
-        "issuer_conditions": {
-          "cardinality": {
-            "min": 1,
-            "max": 1
-          },
-          "contact_information_attributes": {
-            "email_address": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "contact_information"
+          ],
+          "mandatory": true,
+          "value_type": "contact_information_attributes",
+          "source": "user",
+          "display": [
+            {
+              "name": "Contact Information",
+              "locale": "en"
+            }
+          ],
+          "issuer_conditions": {
+            "cardinality": {
+              "min": 1,
+              "max": 1
             },
-            "phone": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
-            },
-            "full_address": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
-            },
-            "postal_code": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
-            },
-            "locality": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
-            },
-            "country": {
-              "mandatory": false,
-              "value_type": "string",
-              "source": "user"
+            "contact_information_attributes": {
+              "email_address": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              },
+              "phone": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              },
+              "full_address": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              },
+              "postal_code": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              },
+              "locality": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              },
+              "country": {
+                "mandatory": false,
+                "value_type": "string",
+                "source": "user"
+              }
             }
           }
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "gender"
+          ],
+          "mandatory": true,
+          "value_type": "uint",
+          "source": "user",
+          "display": [
+            {
+              "name": "Gender",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "age_birth_year"
+          ],
+          "mandatory": true,
+          "value_type": "uint",
+          "display": [
+            {
+              "name": "Year of Birth",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "age_in_years"
+          ],
+          "mandatory": true,
+          "value_type": "uint",
+          "source": "user",
+          "display": [
+            {
+              "name": "Age in Years",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "category"
+          ],
+          "mandatory": false,
+          "value_type": "string",
+          "source": "issuer",
+          "display": [
+            {
+              "name": "Competition Category",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "club_name"
+          ],
+          "mandatory": true,
+          "value_type": "string",
+          "source": "user",
+          "display": [
+            {
+              "name": "Club or Team",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "document_number"
+          ],
+          "mandatory": true,
+          "value_type": "string",
+          "source": "issuer",
+          "display": [
+            {
+              "name": "License Number",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "issuance_date"
+          ],
+          "mandatory": true,
+          "source": "issuer",
+          "display": [
+            {
+              "name": "Issuance Date",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "expiry_date"
+          ],
+          "mandatory": true,
+          "source": "issuer",
+          "display": [
+            {
+              "name": "Expiry Date",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "eu_scope_licence"
+          ],
+          "mandatory": false,
+          "source": "user",
+          "value_type": "bool",
+          "display": [
+            {
+              "name": "Participation in EU competitions",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "aui_banned"
+          ],
+          "mandatory": false,
+          "source": "issuer",
+          "value_type": "bool",
+          "display": [
+            {
+              "name": "Athletics Integrity Unit Ban",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "qualified_competitor_nationals_2026"
+          ],
+          "mandatory": false,
+          "source": "user",
+          "value_type": "bool",
+          "display": [
+            {
+              "name": "Qualified for Utopian Nationals 2026",
+              "locale": "en"
+            }
+          ]
+        },
+        {
+          "path": [
+            "net.openathletics.licence.1",
+            "portrait"
+          ],
+          "mandatory": false,
+          "value_type": "jpeg",
+          "source": "user",
+          "display": [
+            {
+              "name": "Portrait Image",
+              "locale": "en"
+            }
+          ]
         }
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "gender"
-        ],
-        "mandatory": true,
-        "value_type": "uint",
-        "source": "user",
-        "display": [
-          {
-            "name": "Gender",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "age_birth_year"
-        ],
-        "mandatory": true,
-        "value_type": "uint",
-        "display": [
-          {
-            "name": "Year of Birth",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "age_in_years"
-        ],
-        "mandatory": true,
-        "value_type": "uint",
-        "source": "user",
-        "display": [
-          {
-            "name": "Age in Years",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "category"
-        ],
-        "mandatory": false,
-        "value_type": "string",
-        "source": "issuer",
-        "display": [
-          {
-            "name": "Competition Category",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "club_name"
-        ],
-        "mandatory": true,
-        "value_type": "string",
-        "source": "user",
-        "display": [
-          {
-            "name": "Club or Team",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "document_number"
-        ],
-        "mandatory": true,
-        "value_type": "string",
-        "source": "issuer",
-        "display": [
-          {
-            "name": "License Number",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "issuance_date"
-        ],
-        "mandatory": true,
-        "source": "issuer",
-        "display": [
-          {
-            "name": "Issuance Date",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "expiry_date"
-        ],
-        "mandatory": true,
-        "source": "issuer",
-        "display": [
-          {
-            "name": "Expiry Date",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "eu_scope_licence"
-        ],
-        "mandatory": false,
-        "source": "user",
-        "value_type": "bool",
-        "display": [
-          {
-            "name": "Participation in EU competitions",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "aui_banned"
-        ],
-        "mandatory": false,
-        "source": "issuer",
-        "value_type": "bool",
-        "display": [
-          {
-            "name": "Athletics Integrity Unit Ban",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "qualified_competitor_nationals_2026"
-        ],
-        "mandatory": false,
-        "source": "user",
-        "value_type": "bool",
-        "display": [
-          {
-            "name": "Qualified for Utopian Nationals 2026",
-            "locale": "en"
-          }
-        ]
-      },
-      {
-        "path": [
-          "net.openathletics.licence.1",
-          "portrait"
-        ],
-        "mandatory": false,
-        "value_type": "jpeg",
-        "source": "user",
-        "display": [
-          {
-            "name": "Portrait Image",
-            "locale": "en"
-          }
-        ]
-      }
-    ],
+      ]
+    },
     "issuer_config": {
       "issuing_authority": "Utopian Federation",
       "organization_id": "net.openathletics.utopianfederation",

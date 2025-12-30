@@ -3,21 +3,21 @@
       "format":"mso_mdoc",
       "doctype":"net.openathletics.health.1",
       "scope":"net.openathletics.health_mdoc",
-      "cryptographic_binding_methods_supported":[
-         "jwk",
-         "cose_key"
-      ],
-      "credential_signing_alg_values_supported":[
-         "ES256"
-      ],
-      "proof_types_supported":{
-         "jwt":{
-            "proof_signing_alg_values_supported":[
-               "ES256"
-            ]
+       "cryptographic_binding_methods_supported": [
+         "jwk", "cose_key"
+       ],
+       "credential_signing_alg_values_supported": [
+         -7
+       ],
+       "proof_types_supported": {
+         "jwt": {
+           "proof_signing_alg_values_supported": [
+             "ES256"
+           ]
          }
-      },
-      "display":[
+       },
+       "credential_metadata": {
+       "display": [         
          {
             "name":"Health Self-Declaration",
             "locale":"en",
@@ -26,8 +26,8 @@
                "alt_text": "A squared figure of a track"
             }
          }
-      ],
-      "claims":[
+       ],
+       "claims": [
          {
             "path":[
                "net.openathletics.health.1",
@@ -35,7 +35,7 @@
             ],
             "mandatory":true,
             "value_type":"string",
-            "source":"issuer",
+            "source":"user",
             "display":[
                {
                   "name":"User pseudonym",
@@ -114,13 +114,14 @@
                }
             ]
          }
-      ],
-      "issuer_config": {
+       ]
+     },
+       "issuer_config":{
          "issuing_authority": "Utopian Federation",
          "organization_id": "net.openathletics.utopianfederation",
          "validity": 90,
          "organization_name": "Utopian Athletics Federation",
          "namespace": "net.openathletics.licence.1"
-      }
+         }
+     }
    }
-}
