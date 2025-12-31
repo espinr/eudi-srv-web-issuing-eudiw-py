@@ -129,7 +129,22 @@
             "locale": "en"
           }
         ]
-      }
+      },
+      {
+        "path": [
+          "net.openathletics.fan.1",
+          "portrait"
+        ],
+        "mandatory": false,
+        "value_type": "jpeg",
+        "source": "user",
+        "display": [
+          {
+            "name": "Portrait Image",
+            "locale": "en"
+          }
+        ]
+      }      
     ]
   },
     "issuer_config": {

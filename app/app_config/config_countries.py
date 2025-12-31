@@ -141,7 +141,8 @@ class ConfCountries:
                 "eu.europa.ec.eudi.pid_mdoc_deferred",
                 "net.openathletics.health_mdoc",
                 "net.openathletics.fan_mdoc",
-                "net.openathletics.license_mdoc"
+                "net.openathletics.license_mdoc",
+                "net.openathletics.diploma_vc_sd_jwt"
             ],
         },
         # "PT": {

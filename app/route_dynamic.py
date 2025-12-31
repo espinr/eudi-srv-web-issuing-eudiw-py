@@ -1171,7 +1171,6 @@ def presentation_formatter(cleaned_data: dict) -> dict:
 
         for field in fields_to_decode:
             if field in presentation_data[credential]:
-                cfgserv.app_logger.info("Received this data: " + field + " " + presentation_data[credential][field])
                 presentation_data[credential].update(
                     {
                         field: base64.b64encode(

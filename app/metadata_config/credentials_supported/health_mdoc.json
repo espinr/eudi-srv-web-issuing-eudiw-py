@@ -31,36 +31,6 @@
          {
             "path":[
                "net.openathletics.health.1",
-               "user_pseudonym"
-            ],
-            "mandatory":true,
-            "value_type":"string",
-            "source":"user",
-            "display":[
-               {
-                  "name":"User pseudonym",
-                  "locale":"en"
-               }
-            ]
-         },
-         {
-            "path":[
-               "net.openathletics.health.1",
-               "health_declaration"
-            ],
-            "mandatory":true,
-            "value_type":"bool",
-            "source":"user",
-            "display":[
-               {
-                  "name":"Healthy condition",
-                  "locale":"en"
-               }
-            ]
-         },
-         {
-            "path":[
-               "net.openathletics.health.1",
                "issuance_date"
             ],
             "mandatory":true,
