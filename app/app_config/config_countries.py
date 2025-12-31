@@ -80,7 +80,6 @@ class ConfCountries:
             "name": "nodeEU",
             "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=EU",
             "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_EU.pem",
-            # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_EU.pem',
             "pid_mdoc_privkey_passwd": None,  # None or bytes,
             "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_EU_cert.der",
             "loa": EIDAS_LOA_HIGH,
@@ -109,11 +108,8 @@ class ConfCountries:
             "name": "FormEU",
             "pid_url": cfgserv.service_url + "pid/form",
             "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0002_UT.pem",
-            # "pid_mdoc_privkey": cfgserv.privKey_path + "hackathon-DS-0001_UT.pem",
-            # "pid_mdoc_privkey": 'app\certs\PID-DS-0002_UT.pem',
             "pid_mdoc_privkey_passwd": None,  # None or bytes
             "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0002.cert.der",
-            # "pid_mdoc_cert": cfgserv.trusted_CAs_path + "hackathon-DS-0001_UT_cert.der",
             "un_distinguishing_sign": "FC",
             "supported_credentials": [
                 "eu.europa.ec.eudi.pid_mdoc",
@@ -148,177 +144,177 @@ class ConfCountries:
                 "net.openathletics.license_mdoc"
             ],
         },
-        "PT": {
-            "name": "Portugal",
-            "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_PT.pem",
-            # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_PT.pem',
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_PT_cert.der",
-            "un_distinguishing_sign": "P",
-            "supported_credentials": [
-                "eu.europa.ec.eudi.pid_mdoc",
-                "eu.europa.ec.eudi.pid_vc_sd_jwt",
-                "eu.europa.ec.eudi.mdl_mdoc",
-                "eu.europa.ec.eudi.over18_mdoc",
-                "eu.europa.ec.eudi.pid_mdoc_deferred",
-            ],
-            "connection_type": "oauth",
-            "custom_modifiers": {
-                "http://interop.gov.pt/MDC/Cidadao/DataNascimento": "birth_date",
-                "http://interop.gov.pt/MDC/Cidadao/NomeApelido": "family_name",
-                "http://interop.gov.pt/MDC/Cidadao/NomeProprio": "given_name",
-            },
-            "oauth_auth": {
-                "base_url": "https://country-connector.ageverification.dev",
-                "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
-                "scope": "profile",
-                "state": "hkMVY7vjuN7xyLl5",
-                "response_type": "code",
-                "client_id": pt_client_id,
-                "client_secret": pt_client_secret,
-            },
-        },
-        "EE": {
-            "name": "Estonia",
-            "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_EE.pem",
-            # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_EE.pem',
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_EE_cert.der",
-            "supported_credentials": [
-                "eu.europa.ec.eudi.pid_mdoc",
-                "eu.europa.ec.eudi.pid_vc_sd_jwt",
-            ],
-            "connection_type": "openid",
-            "oidc_auth": {
-                "base_url": "https://tara-test.ria.ee",
-                "redirect_uri": urlReturnEE,
-                "scope": "openid",
-                "state": "hkMVY7vjuN7xyLl5",
-                "response_type": "code",
-                "client_id": ee_client_id,
-            },
-            "attribute_request": {
-                "header": {"Host": "tara-test.ria.ee"},
-                "custom_modifiers": {
-                    "birth_date": "date_of_birth",
-                },
-            },
-            "oidc_redirect": {
-                "headers": {
-                    "Host": "tara-test.ria.ee",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "Authorization": ee_auth_header,
-                },
-                "grant_type": "authorization_code",
-                "redirect_uri": ee_redirect_uri,
-            },
-        },
-        "CZ": {
-            "name": "Czechia",
-            "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=CZ",
-            "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_CZ.pem",
-            # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_CZ.pem',
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_CZ_cert.der",
-            "loa": EIDAS_LOA_HIGH,
-            "supported_credentials": [
-                "eu.europa.ec.eudi.pid_mdoc",
-                "eu.europa.ec.eudi.pid_vc_sd_jwt",
-            ],
-            "custom_modifiers": {
-                "family_name": "CurrentFamilyName",
-                "given_name": "CurrentGivenName",
-                "birth_date": "DateOfBirth",
-            },
-            "connection_type": "oauth",
-            "oauth_auth": {
-                "base_url": eidas_node_connector_url,
-                "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
-                "scope": "profile",
-                "state": "hkMVY7vjuN7xyLl5",
-                "response_type": "code",
-                "client_id": eidas_node_client_id,
-                "client_secret": eidas_node_client_secret,
-            },
-        },
-        "NL": {
-            "name": "Netherland",
-            "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=NL",
-            "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_NL.pem",
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_NL_cert.der",
-            "loa": EIDAS_LOA_HIGH,
-            "supported_credentials": [
-                "eu.europa.ec.eudi.pid_mdoc",
-                "eu.europa.ec.eudi.pid_vc_sd_jwt",
-            ],
-            "custom_modifiers": {
-                "family_name": "CurrentFamilyName",
-                "given_name": "CurrentGivenName",
-                "birth_date": "DateOfBirth",
-            },
-            "connection_type": "oauth",
-            "oauth_auth": {
-                "base_url": eidas_node_connector_url,
-                "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
-                "scope": "profile",
-                "state": "hkMVY7vjuN7xyLl5",
-                "response_type": "code",
-                "client_id": eidas_node_client_id,
-                "client_secret": eidas_node_client_secret,
-            },
-        },
-        "LU": {
-            "name": "Luxembourg",
-            "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=LU",
-            "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_LU.pem",
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_LU_cert.der",
-            "loa": EIDAS_LOA_HIGH,
-            "supported_credentials": [
-                "eu.europa.ec.eudi.pid_mdoc",
-                "eu.europa.ec.eudi.pid_vc_sd_jwt",
-            ],
-            "custom_modifiers": {
-                "family_name": "CurrentFamilyName",
-                "given_name": "CurrentGivenName",
-                "birth_date": "DateOfBirth",
-            },
-            "connection_type": "oauth",
-            "oauth_auth": {
-                "base_url": eidas_node_connector_url,
-                "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
-                "scope": "profile",
-                "state": "hkMVY7vjuN7xyLl5",
-                "response_type": "code",
-                "client_id": eidas_node_client_id,
-                "client_secret": eidas_node_client_secret,
-            },
-        },
-        "AV": {
-            "name": "Trusted Issuer",
-            "pid_mdoc_privkey": "/etc/eudiw/age_verification/privKey/AgeVerificationDS-001.pem",
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": "/etc/eudiw/age_verification/cert/AgeVerificationDS-001_cert.der",
-            "un_distinguishing_sign": "AV",
-            "supported_credentials": [
-                "eu.europa.ec.eudi.age_verification_mdoc",
-                "eu.europa.ec.eudi.age_verification_mdoc_passport"
-            ],
-            "dynamic_R2": cfgserv.service_url + "dynamic/form_R2",
-        },
-        "AV2": {
-            "name": "Non-Trusted Issuer",
-            "pid_mdoc_privkey": "/etc/eudiw/age_verification/privKey/bak/AgeVerificationDS-001.pem",
-            "pid_mdoc_privkey_passwd": None,  # None or bytes
-            "pid_mdoc_cert": "/etc/eudiw/age_verification/cert/bak/AgeVerificationDS-001_cert.der",
-            "un_distinguishing_sign": "AV",
-            "supported_credentials": [
-                "eu.europa.ec.eudi.age_verification_mdoc",
-                "eu.europa.ec.eudi.pid_mdoc"
-            ],
-            "dynamic_R2": cfgserv.service_url + "dynamic/form_R2",
-        },
+        # "PT": {
+        #     "name": "Portugal",
+        #     "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_PT.pem",
+        #     # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_PT.pem',
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_PT_cert.der",
+        #     "un_distinguishing_sign": "P",
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.pid_mdoc",
+        #         "eu.europa.ec.eudi.pid_vc_sd_jwt",
+        #         "eu.europa.ec.eudi.mdl_mdoc",
+        #         "eu.europa.ec.eudi.over18_mdoc",
+        #         "eu.europa.ec.eudi.pid_mdoc_deferred",
+        #     ],
+        #     "connection_type": "oauth",
+        #     "custom_modifiers": {
+        #         "http://interop.gov.pt/MDC/Cidadao/DataNascimento": "birth_date",
+        #         "http://interop.gov.pt/MDC/Cidadao/NomeApelido": "family_name",
+        #         "http://interop.gov.pt/MDC/Cidadao/NomeProprio": "given_name",
+        #     },
+        #     "oauth_auth": {
+        #         "base_url": "https://country-connector.ageverification.dev",
+        #         "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
+        #         "scope": "profile",
+        #         "state": "hkMVY7vjuN7xyLl5",
+        #         "response_type": "code",
+        #         "client_id": pt_client_id,
+        #         "client_secret": pt_client_secret,
+        #     },
+        # },
+        # "EE": {
+        #     "name": "Estonia",
+        #     "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_EE.pem",
+        #     # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_EE.pem',
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_EE_cert.der",
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.pid_mdoc",
+        #         "eu.europa.ec.eudi.pid_vc_sd_jwt",
+        #     ],
+        #     "connection_type": "openid",
+        #     "oidc_auth": {
+        #         "base_url": "https://tara-test.ria.ee",
+        #         "redirect_uri": urlReturnEE,
+        #         "scope": "openid",
+        #         "state": "hkMVY7vjuN7xyLl5",
+        #         "response_type": "code",
+        #         "client_id": ee_client_id,
+        #     },
+        #     "attribute_request": {
+        #         "header": {"Host": "tara-test.ria.ee"},
+        #         "custom_modifiers": {
+        #             "birth_date": "date_of_birth",
+        #         },
+        #     },
+        #     "oidc_redirect": {
+        #         "headers": {
+        #             "Host": "tara-test.ria.ee",
+        #             "Content-Type": "application/x-www-form-urlencoded",
+        #             "Authorization": ee_auth_header,
+        #         },
+        #         "grant_type": "authorization_code",
+        #         "redirect_uri": ee_redirect_uri,
+        #     },
+        # },
+        # "CZ": {
+        #     "name": "Czechia",
+        #     "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=CZ",
+        #     "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_CZ.pem",
+        #     # "pid_mdoc_privkey": 'app\certs\PID-DS-0001_CZ.pem',
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_CZ_cert.der",
+        #     "loa": EIDAS_LOA_HIGH,
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.pid_mdoc",
+        #         "eu.europa.ec.eudi.pid_vc_sd_jwt",
+        #     ],
+        #     "custom_modifiers": {
+        #         "family_name": "CurrentFamilyName",
+        #         "given_name": "CurrentGivenName",
+        #         "birth_date": "DateOfBirth",
+        #     },
+        #     "connection_type": "oauth",
+        #     "oauth_auth": {
+        #         "base_url": eidas_node_connector_url,
+        #         "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
+        #         "scope": "profile",
+        #         "state": "hkMVY7vjuN7xyLl5",
+        #         "response_type": "code",
+        #         "client_id": eidas_node_client_id,
+        #         "client_secret": eidas_node_client_secret,
+        #     },
+        # },
+        # "NL": {
+        #     "name": "Netherland",
+        #     "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=NL",
+        #     "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_NL.pem",
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_NL_cert.der",
+        #     "loa": EIDAS_LOA_HIGH,
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.pid_mdoc",
+        #         "eu.europa.ec.eudi.pid_vc_sd_jwt",
+        #     ],
+        #     "custom_modifiers": {
+        #         "family_name": "CurrentFamilyName",
+        #         "given_name": "CurrentGivenName",
+        #         "birth_date": "DateOfBirth",
+        #     },
+        #     "connection_type": "oauth",
+        #     "oauth_auth": {
+        #         "base_url": eidas_node_connector_url,
+        #         "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
+        #         "scope": "profile",
+        #         "state": "hkMVY7vjuN7xyLl5",
+        #         "response_type": "code",
+        #         "client_id": eidas_node_client_id,
+        #         "client_secret": eidas_node_client_secret,
+        #     },
+        # },
+        # "LU": {
+        #     "name": "Luxembourg",
+        #     "pid_url_oidc": cfgserv.service_url + "eidasnode/lightrequest?country=LU",
+        #     "pid_mdoc_privkey": cfgserv.privKey_path + "PID-DS-0001_LU.pem",
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": cfgserv.trusted_CAs_path + "PID-DS-0001_LU_cert.der",
+        #     "loa": EIDAS_LOA_HIGH,
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.pid_mdoc",
+        #         "eu.europa.ec.eudi.pid_vc_sd_jwt",
+        #     ],
+        #     "custom_modifiers": {
+        #         "family_name": "CurrentFamilyName",
+        #         "given_name": "CurrentGivenName",
+        #         "birth_date": "DateOfBirth",
+        #     },
+        #     "connection_type": "oauth",
+        #     "oauth_auth": {
+        #         "base_url": eidas_node_connector_url,
+        #         "redirect_uri": f"{cfgserv.service_url}dynamic/redirect",
+        #         "scope": "profile",
+        #         "state": "hkMVY7vjuN7xyLl5",
+        #         "response_type": "code",
+        #         "client_id": eidas_node_client_id,
+        #         "client_secret": eidas_node_client_secret,
+        #     },
+        # },
+        # "AV": {
+        #     "name": "Trusted Issuer",
+        #     "pid_mdoc_privkey": "/etc/eudiw/age_verification/privKey/AgeVerificationDS-001.pem",
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": "/etc/eudiw/age_verification/cert/AgeVerificationDS-001_cert.der",
+        #     "un_distinguishing_sign": "AV",
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.age_verification_mdoc",
+        #         "eu.europa.ec.eudi.age_verification_mdoc_passport"
+        #     ],
+        #     "dynamic_R2": cfgserv.service_url + "dynamic/form_R2",
+        # },
+        # "AV2": {
+        #     "name": "Non-Trusted Issuer",
+        #     "pid_mdoc_privkey": "/etc/eudiw/age_verification/privKey/bak/AgeVerificationDS-001.pem",
+        #     "pid_mdoc_privkey_passwd": None,  # None or bytes
+        #     "pid_mdoc_cert": "/etc/eudiw/age_verification/cert/bak/AgeVerificationDS-001_cert.der",
+        #     "un_distinguishing_sign": "AV",
+        #     "supported_credentials": [
+        #         "eu.europa.ec.eudi.age_verification_mdoc",
+        #         "eu.europa.ec.eudi.pid_mdoc"
+        #     ],
+        #     "dynamic_R2": cfgserv.service_url + "dynamic/form_R2",
+        # },
     }
 
 

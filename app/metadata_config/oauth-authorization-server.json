@@ -2,7 +2,7 @@
     "issuer":
         "https://oidc.issuer.pbest.me",
     "authorization_endpoint":
-        "https://oidc.issuer.pbest.me/authorizationV3",
+        "https://oidc.issuer.pbest.me/authorization",
     "token_endpoint":
         "https://oidc.issuer.pbest.me/token",
     "token_endpoint_auth_methods_supported": 
