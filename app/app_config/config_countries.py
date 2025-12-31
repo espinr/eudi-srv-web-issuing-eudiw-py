@@ -323,7 +323,7 @@ class ConfFrontend:
         cfgserv.default_frontend: {
             "url": os.getenv("DEFAULT_FRONTEND_URL", "https://issuer.pbest.me")
         },
-        "6d725b3c-6d42-448e-8bfd-1eff1fcf152d": {
-            "url": "https://age-verification.issuer.eudiw.dev"
-        },
+        # "6d725b3c-6d42-448e-8bfd-1eff1fcf152d": {
+        #     "url": "https://age-verification.issuer.eudiw.dev"
+        # },
     }
