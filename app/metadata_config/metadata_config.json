@@ -35,9 +35,9 @@
                "use":"enc",
                "alg":"ECDH-ES",
                "crv":"P-256",
-               "x":"xuUPSgobyy2Pxw-rUgmYHe92K4JuuFIAKu1vbIw6pgo",
-               "y":"HoYHVVdZdEdVYZWf_ryHhgd4ak5-6xykpvFgZaK_Z8Q",
-               "kid":"D6KSZ43BrxnLwBAajruJpB1t7TrsWuE-mAn6ihHqT8w"
+               "x": "Cyiqb9_PF_ieujsX6UWoM2LwGd0eDRIC4y1zXgdw5xM",
+               "y": "hb_tMeu68RFCLSXSClAJ1_MDoTVVvoZ15t-3dMxXtRk",
+               "kid": "D6KSZ43BrxnLwBAajruJpB1t7TrsWuE-mAn6ihHqT8w"
             }
          ]
       },
