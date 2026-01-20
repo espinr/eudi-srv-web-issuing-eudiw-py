@@ -128,6 +128,106 @@ def preauthRed():
         },
     )
 
+@preauth.route("/preauth_sports", methods=["GET"])
+def preauth_sports():
+
+    credential_id = request.args.get("credential_id")
+
+    scope = credential_id
+
+    session_id = request_preauth_token(scope=scope)
+
+    session["session_id"] = session_id
+
+    authorization_details = [{"type": "openid_credential", "credential_configuration_id": credential_id}]
+
+    session_manager.update_authorization_details(
+        session_id=session_id, authorization_details=authorization_details
+    )
+
+    if "frontend_id" in session:
+        session_manager.update_frontend_id(
+            session_id=session_id, frontend_id=session["frontend_id"]
+        )
+    else:
+        session_manager.update_frontend_id(
+            session_id=session_id, frontend_id=cfgservice.default_frontend
+        )
+
+    # session["authorization_details"] = authorization_details
+
+    credentials_requested = []
+    for cred in authorization_details:
+        if "credential_configuration_id" in cred:
+            if cred["credential_configuration_id"] not in credentials_requested:
+                credentials_requested.append(cred["credential_configuration_id"])
+        elif "vct" in cred:
+            if cred["vct"] not in credentials_requested:
+                credentials_requested.append(cred["vct"])
+
+    session_manager.update_credentials_requested(
+        session_id=session_id, credentials_requested=credentials_requested
+    )
+
+    current_session = session_manager.get_session(session_id=session_id)
+
+    target_url = ConfFrontend.registered_frontends[current_session.frontend_id]["url"]
+
+    return post_redirect_with_payload(
+        target_url=f"{target_url}/display_preauth_credentials",
+        data_payload={
+            "credential_id": credential_id,
+            "redirect_url": f"{cfgservice.service_url}preauth_predefined_values_form",
+            "session_id": session_id,
+        },
+    )
+
+@preauth.route("/preauth_predefined_values_form", methods=["GET", "POST"])
+def preauth_predefined_values_form():
+
+    form_data = request.form.to_dict()
+
+    cfgservice.app_logger.info(f"form_data: {form_data}")
+
+    if "effective_from_date" in form_data:
+        dt = datetime.strptime(form_data["effective_from_date"], "%Y-%m-%d").replace(
+            tzinfo=timezone.utc
+        )
+        rfc3339_string = dt.isoformat().replace("+00:00", "Z")
+        form_data.update({"effective_from_date": rfc3339_string})
+
+    session_id = session["session_id"]
+
+    current_session = session_manager.get_session(session_id=session_id)
+
+    cfgservice.app_logger.info(f"session_id: {session_id}")
+
+    form_data.pop("proceed")
+
+    cleaned_data = form_formatter(form_data)
+
+    """ form_dynamic_data[user_id] = cleaned_data.copy()
+    form_dynamic_data[user_id].update(
+        {"expires": datetime.now() + timedelta(minutes=cfgservice.form_expiry)}
+    )
+    print("\nform_dynamic_data: ", form_dynamic_data[user_id]) """
+
+    session_manager.update_user_data(session_id=session_id, user_data=cleaned_data)
+
+    presentation_data = presentation_formatter(cleaned_data=cleaned_data)
+
+    target_url = ConfFrontend.registered_frontends[current_session.frontend_id]["url"]
+
+    return post_redirect_with_payload(
+        target_url=f"{target_url}/display_authorization_predefined_values",
+        data_payload={
+            "presentation_data": presentation_data,
+            "redirect_url": f"{cfgservice.service_url}form_authorize_generate",
+            "session_id": session_id,
+        },
+    )
+
+
 
 @preauth.route("/preauth_form", methods=["GET", "POST"])
 def preauth_form():
@@ -175,11 +275,13 @@ def preauth_form():
     )
 
 
+
 @preauth.route("/form_authorize_generate", methods=["GET", "POST"])
 def form_authorize_generate():
 
     form_data = request.form.to_dict()
 
+    # User ID is the same as the session
     user_id = form_data["user_id"]
     # data = form_dynamic_data[user_id]
 
