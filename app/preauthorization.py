@@ -338,7 +338,7 @@ def generate_offer(data):
     # create URI
     json_string = json.dumps(credential_offer)
 
-    credential_offer_URI = session["credential_offer_URI"]
+    credential_offer_URI = session.get("credential_offer_URI", "haip-vci://")
 
     uri = (
         f"{credential_offer_URI}credential_offer?credential_offer="
