@@ -12,7 +12,6 @@ If you want to test or reuse this project, just use the existing servers deploye
 
 * WALLET NATIVE APP
   * Wallet for Android: https://github.com/espinr/eudi-app-android  
-  * Backend for the Wallet: https://github.com/espinr/eudi-srv-wallet-provider
 
 * VERIFIER (PROXIMITY)
   * Verifier for Android (Based on Multipaz): https://github.com/espinr/eudi-app-multiplatform-verifier-ui
