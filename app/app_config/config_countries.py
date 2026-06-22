@@ -142,7 +142,7 @@ class ConfCountries:
                 "net.openathletics.health_mdoc",
                 "net.openathletics.fan_mdoc",
                 "net.openathletics.license_mdoc",
-                "net.openathletics.diploma_vc_sd_jwt"
+                "net.openathletics.ivsi_mdoc"
             ],
         },
         # "PT": {
